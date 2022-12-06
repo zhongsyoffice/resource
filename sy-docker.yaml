@@ -1,0 +1,76 @@
+version: "3"
+services:
+  # tutor:
+  #   image: dockersamples/101-tutorial
+  #   deploy:
+  #     replicas: 1
+  benchmarkapp:
+    image: nclcloudcomputing/javabenchmarkapp
+    deploy:
+      replicas: 1
+    #   # resource:
+    #   #   limits:
+    #   #     cpus: "0.2"
+    #   #     memory: 100M
+    #   #   reservations:
+    #   #     cpus: "0.1"
+    #   #     memory: 75m
+    #   placement:
+    #     constraints: 
+    #       - "node.role==manager"
+    #       - "node.hostname==songyouZhong-wsl"
+    ports:
+      - "8080:8080"
+    environment: 
+      ENV_KEY: ENV_VALUE
+  # locust:
+    # image: locustio/locust
+    # deploy:
+    #   eplicas: 2
+    #   # resource:
+    #   #   limits:
+    #   #     cpus: "0.2"
+    #   #     memory: 100M
+    #   #   reservations:
+    #   #     cpus: "0.1"
+    #   #     memory: 75m
+    # ports:
+    #     - "8089:8089"
+  # mongo:
+  #   image: mongo
+    # deploy:
+    #   eplicas: 2
+    #     # resource:
+    #     #   limits:
+    #     #     cpus: "0.2"
+    #     #     memory: 100M
+    #     #   reservations:
+    #     #     cpus: "0.1"
+    #     #     memory: 75m
+    # ports:
+    #   - 27017:27017
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: rootpassword
+  # cAdvisor:
+  #   image: gcr.io/cadvisor/cadvisor
+    # deploy:
+    #   eplicas: 2
+        # resource:
+        #   limits:
+        #     cpus: "0.2"
+        #     memory: 100M
+        #   reservations:
+        #     cpus: "0.1"
+        #     memory: 75m
+  # visualizer:
+  #   image: dockersamples/visualizer
+    # deploy:
+    #   eplicas: 2
+      # resource:
+      #   limits:
+      #     cpus: "0.2"
+      #     memory: 100M
+      #   reservations:
+      #     cpus: "0.1"
+      #     memory: 75m
